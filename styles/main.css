@@ -1,0 +1,193 @@
+body {
+    padding: 0;
+    margin: 0;
+    font: normal 16px Tahoma;
+    line-height: 150%;
+}
+
+/*====
+Header
+=====*/
+
+header {
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+
+header #header-nav-toggle {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+header #header-nav-toggle:focus {
+    outline: none;
+}
+
+header #header-nav-toggle .icon-bar {
+    display: block;
+    width: 28px;
+    height: 5px;
+    background: #fff;
+    border-radius: 1px;
+    margin: 4px;
+}
+
+header > nav {
+    text-align: center;
+    -webkit-transition: max-height 500ms;
+    -moz-transition: max-height 500ms;
+    -ms-transition: max-height 500ms;
+    -o-transition: max-height 500ms;
+    transition: max-height 500ms;
+    overflow: hidden;
+}
+
+header > nav.opened {
+    max-height: 500px;
+}
+
+@media screen and (max-width: 640px) {
+    header > nav {
+        max-height: 0;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    header #header-nav-toggle {
+        display: none;
+    }
+}
+
+header > nav > ul {
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+header > nav > ul > li {
+    display: inline;
+}
+
+header > nav > ul > li > a {
+    color: #fff;
+}
+
+header > h2 {
+    text-align: center;
+    margin: 26px 0;
+}
+
+/*====
+Left menu
+=====*/
+#left-nav {
+    float: left;
+    width: 35%;
+    background: #ECECEC;
+    padding: 15px 0;
+}
+
+#left-nav ul {
+    list-style-type: none;
+    padding: 0 0 0 40px;
+    margin: 0;
+}
+
+#left-nav ul > li > a {
+    color: #a6021f;
+    text-decoration: none;
+}
+
+#left-nav ul > li > a:hover {
+    text-decoration: underline;
+}
+
+/*====
+Content
+=====*/
+section {
+    box-sizing: border-box;
+    float: right;
+    width: 65%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+section > h1 {
+    color: #a6021f;
+    font: bold 32px Tahoma;
+    margin: 10px 0 40px 0;
+}
+
+section > article > p {
+    text-align: justify;
+}
+
+figure {
+    position: relative;
+    line-height: 0;
+    margin: 0;
+}
+
+figure > img {
+    width: 100%;
+    height: auto;
+}
+
+figure:hover > .mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.25;
+    background: #fff;
+}
+
+figure > figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 41px;
+    line-height: 41px;
+    font-size: 13px;
+
+    display: none;
+
+    background: #000;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+figure:hover > figcaption {
+    display: block;
+
+}
+
+/*====
+Footer
+=====*/
+
+footer {
+    margin-top: 20px;
+    padding: 6px;
+    text-align: center;
+    background: #ECECEC;
+    color: #AAA;
+    font-size: 12px;
+    clear: both;
+}
+
+footer a {
+    color: #888;
+}
