@@ -89,15 +89,17 @@ header > h2 {
 Left menu
 =====*/
 #left-nav {
-    float: left;
+    position: fixed;
+    top: 105px;
     width: 35%;
+    max-width: 350px;
     background: #ECECEC;
     padding: 15px 0;
 }
 
 #left-nav ul {
     list-style-type: none;
-    padding: 0 0 0 40px;
+    padding: 0 40px;
     margin: 0;
 }
 
@@ -112,14 +114,27 @@ Left menu
 
 @media screen and (max-width: 640px) {
     #left-nav {
+        position: inherit;
         float: none;
         width: 100%;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #left-nav ul {
+        padding: 0 20px;
     }
 }
 
 /*====
 Content
 =====*/
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 section {
     box-sizing: border-box;
     float: right;
@@ -150,6 +165,7 @@ section > article > p {
 }
 
 .figure-with-legend > figure > img {
+    width: 100%;
     max-width: 100%;
     height: auto;
     max-height: 500px;
