@@ -7,16 +7,16 @@ var cssFilename = 'styles/[name].css';
 var imageFilename = 'images/[name].[ext]';
 
 module.exports = {
-    entry: "./scripts/main.js",
+    entry: "./scripts/main.jsx",
     module: {
         loaders: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: [/node_modules/],
                 loader: 'babel',
                 query: {
                     cacheDirectory: true,
-                    presets: ['es2015']
+                    presets: ['es2015', 'react']
                 }
             },
             {
