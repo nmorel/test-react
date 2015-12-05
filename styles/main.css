@@ -42,6 +42,7 @@ header > nav {
     text-align: center;
     transition: max-height 500ms;
     overflow: hidden;
+    padding: 0 33px;
 }
 
 header > nav.opened {
@@ -71,6 +72,12 @@ header > nav > ul > li {
 
 header > nav > ul > li > a {
     color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header > nav > ul > li > a.active, header > nav > ul > li > a:hover {
+    text-decoration: underline;
 }
 
 header > h2 {
