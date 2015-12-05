@@ -1,6 +1,6 @@
 import React from 'react';
 import Article from 'article.jsx';
-import articleIdGenerator from 'article-id-generator';
+import articleIdGenerator from '../services/article-id-generator';
 
 /**
  * Represents a section composed of a title and a list of articles.

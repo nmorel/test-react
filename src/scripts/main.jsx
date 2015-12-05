@@ -10,9 +10,9 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 //https://github.com/zilverline/react-tap-event-plugin
 injectTapEventPlugin();
 
-import Header from 'header.jsx';
-import Home from 'home.jsx';
-import Footer from 'footer.jsx';
+import Header from 'layout/header.jsx';
+import Home from 'views/home.jsx';
+import Footer from 'layout/footer.jsx';
 
 ReactDom.render(<div>
   <Header/>

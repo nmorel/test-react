@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticleElement from 'article-element.jsx';
-import articleIdGenerator from 'article-id-generator';
+import articleIdGenerator from '../services/article-id-generator';
 
 /**
  * Represents an article with elements of various types.

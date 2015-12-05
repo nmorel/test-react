@@ -7,7 +7,7 @@ var cssFilename = 'styles/[name].css';
 var imageFilename = 'images/[name].[ext]';
 
 module.exports = {
-    entry: "./scripts/main.jsx",
+    entry: "./src/scripts/main.jsx",
     module: {
         loaders: [
             {
@@ -39,15 +39,15 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin(cssFilename),
         new HtmlWebpackPlugin({
-            template: 'html!' + path.resolve(__dirname, 'index.html'),
-            favicon: path.resolve(__dirname, 'images/favicon.ico')
+            template: 'html!' + path.resolve(__dirname, 'src/index.html'),
+            favicon: path.resolve(__dirname, 'src/images/favicon.ico')
         })
     ],
     resolve: {
         modulesDirectories: ['.', './node_modules']
     },
     devServer: {
-        contentBase: path.resolve(__dirname, 'build'),
+        //contentBase: path.resolve(__dirname, 'build'),
         publicPath: '/',
         progress: true,
         colors: true,

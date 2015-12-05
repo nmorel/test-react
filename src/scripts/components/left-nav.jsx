@@ -1,5 +1,5 @@
 import React from 'react';
-import articleIdGenerator from 'article-id-generator';
+import articleIdGenerator from '../services/article-id-generator';
 
 /**
  * Generates the links corresponding to the articles.

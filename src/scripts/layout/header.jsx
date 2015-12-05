@@ -1,5 +1,5 @@
 import React from 'react';
-import NavToggle from 'nav-toggle.jsx';
+import NavToggle from '../components/nav-toggle.jsx';
 
 // TODO Replace with ReactRouter
 
