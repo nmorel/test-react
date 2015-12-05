@@ -21,9 +21,5 @@ a {
 }
 
 ::selection {
-  background: $primary-color; /* WebKit/Blink Browsers */
-}
-
-::-moz-selection {
-  background: $primary-color; /* Gecko Browsers */
+  background: $primary-color;
 }
