@@ -40,10 +40,6 @@ header #header-nav-toggle .icon-bar {
 
 header > nav {
     text-align: center;
-    -webkit-transition: max-height 500ms;
-    -moz-transition: max-height 500ms;
-    -ms-transition: max-height 500ms;
-    -o-transition: max-height 500ms;
     transition: max-height 500ms;
     overflow: hidden;
 }
@@ -105,6 +101,13 @@ Left menu
 
 #left-nav ul > li > a:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 640px) {
+    #left-nav {
+        float: none;
+        width: 100%;
+    }
 }
 
 /*====
@@ -172,6 +175,13 @@ figure > figcaption {
 figure:hover > figcaption {
     display: block;
 
+}
+
+@media screen and (max-width: 640px) {
+    section {
+        float: none;
+        width: 100%;
+    }
 }
 
 /*====
