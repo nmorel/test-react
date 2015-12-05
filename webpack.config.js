@@ -25,9 +25,9 @@ module.exports = {
                 loader: 'file-loader?name=' + imageFilename
             },
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 exclude: [/node_modules/],
-                loader: ExtractTextPlugin.extract('css')
+                loader: ExtractTextPlugin.extract('css!sass')
             }
         ]
     },

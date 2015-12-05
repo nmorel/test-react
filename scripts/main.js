@@ -1,4 +1,4 @@
-require('../styles/main.css');
+require('../styles/main.scss');
 
 handleToggleNav();
 handleLeftMenu();
@@ -14,10 +14,10 @@ function handleToggleNav() {
      * Toggle the navigation menu in the header
      */
     function toggleHeaderNav() {
-        if (headerNav.className.indexOf('opened') > 0) {
-            headerNav.className = headerNav.className.replace('opened', '');
+        if (headerNav.classList.contains('opened')) {
+            headerNav.classList.remove('opened');
         } else {
-            headerNav.className = headerNav.className + ' opened';
+            headerNav.classList.add('opened');
         }
     }
 }
