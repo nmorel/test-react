@@ -42,7 +42,8 @@ header > nav {
     text-align: center;
     transition: max-height 500ms;
     overflow: hidden;
-    padding: 0 33px;
+    /* To avoid the toggle button to be on top of links */
+    padding: 0 37px;
 }
 
 header > nav.opened {
@@ -83,6 +84,8 @@ header > nav > ul > li > a.active, header > nav > ul > li > a:hover {
 header > h2 {
     text-align: center;
     margin: 26px 0;
+    /* To avoid the toggle button to be on top of title */
+    padding: 0 37px;
 }
 
 /*====
@@ -229,4 +232,17 @@ footer {
 
 footer a {
     color: #888;
+}
+
+footer .links {
+    display: block;
+}
+
+@media screen and (min-width: 640px) {
+    footer .links::before {
+        content: ' — ';
+    }
+    footer .links {
+        display: inline;
+    }
 }
