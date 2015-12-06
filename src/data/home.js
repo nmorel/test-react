@@ -13,6 +13,7 @@ export default {
       text: 'Morbi ornare, nisi sagittis sollicitudin rhoncus, quam purus cursus magna, non posuere leo turpis in erat. Mauris nisi neque, interdum at orci quis, venenatis viverra lorem. In sed orci tellus.'
     }, {
       type: 'figure',
+      filename: 'logo.png',
       url: require('../images/logo.png'),
       caption: 'Class aptent taciti sociosqu ad litora'
     }]
