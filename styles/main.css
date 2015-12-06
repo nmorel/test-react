@@ -40,19 +40,20 @@ header #header-nav-toggle .icon-bar {
 
 header > nav {
     text-align: center;
-    transition: max-height 500ms;
     overflow: hidden;
     /* To avoid the toggle button to be on top of links */
     padding: 0 37px;
 }
 
 header > nav.opened {
+    transition: max-height 500ms ease-in;
     max-height: 500px;
 }
 
 @media screen and (max-width: 640px) {
     header > nav {
         max-height: 0;
+        transition: max-height 500ms ease-out;
     }
 }
 
