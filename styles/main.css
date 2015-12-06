@@ -159,30 +159,25 @@ section > article > p {
 
 .figure-with-legend {
     text-align: center;
+    line-height: 0;
 }
 
 .figure-with-legend > figure {
     display: inline-block;
-    position: relative;
-    line-height: 0;
     margin: 0;
+    padding: 0;
+    max-width: 100%;
+    position: relative;
 }
 
 .figure-with-legend > figure > img {
-    width: 100%;
     max-width: 100%;
-    height: auto;
     max-height: 500px;
+    height: auto;
 }
 
-.figure-with-legend > figure:hover .mask {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.25;
-    background: #fff;
+.figure-with-legend > figure:hover > img {
+    opacity: 0.75;
 }
 
 .figure-with-legend > figure > figcaption {
@@ -207,7 +202,6 @@ section > article > p {
 
 .figure-with-legend > figure:hover > figcaption {
     display: block;
-
 }
 
 @media screen and (max-width: 640px) {
