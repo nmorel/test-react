@@ -1,4 +1,5 @@
 *.iml
 /.idea
-/build
+/.publish
+/dist
 /node_modules

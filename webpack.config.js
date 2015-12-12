@@ -8,6 +8,7 @@ const imageFilename = 'images/[name].[ext]';
 
 module.exports = {
   entry: './src/scripts/entry.jsx',
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -32,7 +33,7 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     filename: filename,
     libraryTarget: 'umd',
   },
