@@ -1,19 +1,12 @@
 import React from 'react';
-import Article from 'article.jsx';
+import Article from 'Article.jsx';
 import articleIdGenerator from '../services/article-id-generator';
 
 /**
  * Represents a section composed of a title and a list of articles.
  */
-export default React.createClass({
-  propTypes: {
-    // Section data
-    section: React.PropTypes.shape({
-      title: React.PropTypes.string.isRequired,
-      articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
-    }).isRequired
-  },
-  render: function() {
+class Section extends React.Component {
+  render() {
     const articles = this.props.section.articles.map((article, index) => {
       const key = articleIdGenerator(index);
       return <Article key={key} index={key} level={1} article={article}/>;
@@ -25,4 +18,14 @@ export default React.createClass({
       </section>
     );
   }
-})
+}
+
+Section.propTypes = {
+  // Section data
+  section: React.PropTypes.shape({
+    title: React.PropTypes.string.isRequired,
+    articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+  }).isRequired,
+};
+
+export default Section;
