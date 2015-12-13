@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import { createMemoryHistory } from 'history';
+import { createMemoryHistory, useBasename } from 'history';
 import { RoutingContext, match } from 'react-router';
 
 import routes from './routes.jsx';
@@ -14,6 +14,7 @@ class Page extends React.Component {
     scripts: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
     stylesheets: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
     appHtml: React.PropTypes.string.isRequired,
+    baseHref: React.PropTypes.string.isRequired,
   };
 
   render() {
@@ -22,6 +23,8 @@ class Page extends React.Component {
       <head>
         <meta charSet="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <base href={this.props.baseHref} />
 
         <title>Test d'intégration</title>
 
@@ -50,6 +53,7 @@ module.exports = function render(locals, callback) {
       locals.assets.web,
     ],
     stylesheets: [],
+    baseHref: locals.webpackStats.compilation.outputOptions.publicPath,
   };
   Object.keys(locals.webpackStats.compilation.assets).forEach(asset => {
     if (/\.css$/.test(asset)) {
@@ -57,7 +61,9 @@ module.exports = function render(locals, callback) {
     }
   });
 
-  const history = createMemoryHistory();
+  const history = useBasename(createMemoryHistory)({
+    basename: props.baseHref,
+  });
   const location = history.createLocation(locals.path);
 
   match({ routes, location }, (error, redirectLocation, renderProps) => {

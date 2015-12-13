@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createHistory } from 'history';
+import { createHistory, useBasename } from 'history';
 import { Router } from 'react-router';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -15,5 +15,5 @@ injectTapEventPlugin();
 
 import routes from './routes.jsx';
 
-const history = createHistory();
+const history = useBasename(createHistory)();
 ReactDOM.render(<Router history={history} routes={routes}/>, document.getElementById('app'));

@@ -22,7 +22,9 @@ gulp.task('build', ['webpack'], () => {
 });
 
 gulp.task('webpack', (callback) => {
-  const options = require('./webpack.config');
+  const options = require('./webpack')({
+    publicPath: '/test-react/',
+  });
   options.plugins.push(new webpack.optimize.UglifyJsPlugin());
 
   // run webpack
