@@ -26,16 +26,16 @@ class Header extends React.Component {
         <nav id="header-nav" className={navBarClasses}>
           <ul>
             <li>
-              <Link to="/">Accueil</Link>
+              <Link to="/" activeClassName="active">Accueil</Link>
             </li>
             <li>
-              <Link to="/page1">Page 1</Link>
+              <Link to="/page1" activeClassName="active">Page 1</Link>
             </li>
             <li>
-              <Link to="/page2">Page 2</Link>
+              <Link to="/page2" activeClassName="active">Page 2</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact" activeClassName="active">Contact</Link>
             </li>
           </ul>
         </nav>
