@@ -2,8 +2,9 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
+const publicPath = '/';
 const filename = 'scripts/[name].[chunkhash].js';
-const cssFilename = 'styles/styles.[contenthash].css';
+const cssFilename = `${publicPath}styles/styles.[contenthash].css`;
 const imageFilename = 'images/[name].[hash].[ext]';
 
 module.exports = {
@@ -40,16 +41,17 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: filename,
     libraryTarget: 'umd',
+    publicPath: publicPath,
   },
   plugins: [
     new ExtractTextPlugin(cssFilename),
-    new StaticSiteGeneratorPlugin('static', ['/']),
+    new StaticSiteGeneratorPlugin('static', ['/', '/page1', '/page2', '/contact']),
   ],
   resolve: {
     modulesDirectories: ['.', './node_modules'],
   },
   devServer: {
-    publicPath: '/',
+    publicPath: publicPath,
     progress: true,
     colors: true,
   },

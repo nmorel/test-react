@@ -1,7 +1,6 @@
 import React from 'react';
 import NavToggle from '../components/NavToggle.jsx';
-
-// TODO Replace with ReactRouter
+import { Link } from 'react-router';
 
 /**
  * Represents the application"s header
@@ -27,16 +26,16 @@ class Header extends React.Component {
         <nav id="header-nav" className={navBarClasses}>
           <ul>
             <li>
-              <a href="#" className={'active'}>Accueil</a>
+              <Link to="/">Accueil</Link>
             </li>
             <li>
-              <a href="#">Menu 1</a>
+              <Link to="/page1">Page 1</Link>
             </li>
             <li>
-              <a href="#">Autre page</a>
+              <Link to="/page2">Page 2</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>

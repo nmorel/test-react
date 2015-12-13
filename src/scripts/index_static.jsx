@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import App from 'layout/App.jsx';
+
+import { createMemoryHistory } from 'history';
+import { RoutingContext, match } from 'react-router';
+
+import routes from './routes.jsx';
 
 /**
  * Represents the application's complete page used for static generation
  */
-class Root extends React.Component {
+class Page extends React.Component {
   static propTypes = {
     scripts: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
     stylesheets: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
@@ -53,9 +57,14 @@ module.exports = function render(locals, callback) {
     }
   });
 
-  // Application element that will be overriden on client
-  props.appHtml = ReactDOMServer.renderToString(React.createElement(App));
+  const history = createMemoryHistory();
+  const location = history.createLocation(locals.path);
 
-  const html = ReactDOMServer.renderToStaticMarkup(React.createElement(Root, props));
-  callback(null, '<!DOCTYPE html>' + html);
+  match({ routes, location }, (error, redirectLocation, renderProps) => {
+    // Application element that will be overriden on client
+    props.appHtml = ReactDOMServer.renderToString(<RoutingContext {...renderProps} />);
+
+    const html = ReactDOMServer.renderToStaticMarkup(React.createElement(Page, props));
+    callback(null, '<!DOCTYPE html>' + html);
+  });
 };
