@@ -13,12 +13,9 @@ class LeftNav extends React.Component {
     }).isRequired,
   };
 
-  state = {
-    top: 0,
-  };
+  state = {};
 
   componentDidMount() {
-    this._updateLeftMenuTop();
     document.addEventListener('scroll', this._updateLeftMenuTop);
   }
 
@@ -93,6 +90,7 @@ class LeftNav extends React.Component {
     const top = Math.max(0, header.offsetHeight - scrollTop);
     if (top !== this.state.top) {
       this.setState({
+        position: 'fixed',
         top: top,
       });
     }

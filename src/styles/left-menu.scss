@@ -1,8 +1,8 @@
 @import 'variables';
 
 #left-nav {
-  position: fixed;
-  top: 105px;
+  position: absolute;
+  top: 0;
   width: $left-menu-width;
   max-width: 350px;
   background: #ECECEC;
