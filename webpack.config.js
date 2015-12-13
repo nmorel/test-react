@@ -2,12 +2,15 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
-const filename = 'scripts/bundle.js';
-const cssFilename = 'styles/[name].css';
-const imageFilename = 'images/[name].[ext]';
+const filename = 'scripts/[name].[chunkhash].js';
+const cssFilename = 'styles/styles.[contenthash].css';
+const imageFilename = 'images/[name].[hash].[ext]';
 
 module.exports = {
-  entry: './src/scripts/entry.jsx',
+  entry: {
+    web: './src/scripts/index.jsx',
+    static: './src/scripts/index_static.jsx',
+  },
   devtool: 'source-map',
   module: {
     loaders: [
@@ -40,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin(cssFilename),
-    new StaticSiteGeneratorPlugin(filename, ['/']),
+    new StaticSiteGeneratorPlugin('static', ['/']),
   ],
   resolve: {
     modulesDirectories: ['.', './node_modules'],
