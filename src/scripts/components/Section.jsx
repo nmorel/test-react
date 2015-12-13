@@ -6,6 +6,14 @@ import articleIdGenerator from '../services/article-id-generator';
  * Represents a section composed of a title and a list of articles.
  */
 class Section extends React.Component {
+  static propTypes = {
+    // Section data
+    section: React.PropTypes.shape({
+      title: React.PropTypes.string.isRequired,
+      articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    }).isRequired,
+  };
+
   render() {
     const articles = this.props.section.articles.map((article, index) => {
       const key = articleIdGenerator(index);
@@ -19,13 +27,5 @@ class Section extends React.Component {
     );
   }
 }
-
-Section.propTypes = {
-  // Section data
-  section: React.PropTypes.shape({
-    title: React.PropTypes.string.isRequired,
-    articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-  }).isRequired,
-};
 
 export default Section;

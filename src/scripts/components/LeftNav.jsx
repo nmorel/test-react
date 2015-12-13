@@ -5,15 +5,17 @@ import articleIdGenerator from '../services/article-id-generator';
  * Represents a menu on left side to navigate between articles in a section.
  */
 class LeftNav extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      top: 0,
-    };
-    this._updateLeftMenuTop = this._updateLeftMenuTop.bind(this);
-    this._generateArticleLinks = this._generateArticleLinks.bind(this);
-    this._generateArticleLink = this._generateArticleLink.bind(this);
-  }
+
+  static propTypes = {
+    // Section data
+    section: React.PropTypes.shape({
+      articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    }).isRequired,
+  };
+
+  state = {
+    top: 0,
+  };
 
   componentDidMount() {
     this._updateLeftMenuTop();
@@ -30,10 +32,10 @@ class LeftNav extends React.Component {
    * @param prefixId The prefix to append to article's id
    * @returns {object} the generated element
    */
-  _generateArticleLinks(articles, prefixId) {
+  _generateArticleLinks = (articles, prefixId) => {
     const links = articles.map((article, index) => this._generateArticleLink(article, index, prefixId));
     return <ul>{links}</ul>;
-  }
+  };
 
   /**
    * Generates the link corresponding to the article.
@@ -42,7 +44,7 @@ class LeftNav extends React.Component {
    * @param prefixId The prefix to append to article's id
    * @returns {object} the generated element or undefined if the element is not an article.
    */
-  _generateArticleLink(article, index, prefixId) {
+  _generateArticleLink = (article, index, prefixId) => {
     if (article.type && article.type !== 'article') {
       // it's not an article but a paragraph or figure
       return null;
@@ -80,9 +82,9 @@ class LeftNav extends React.Component {
     }
 
     return res;
-  }
+  };
 
-  _updateLeftMenuTop() {
+  _updateLeftMenuTop = () => {
     // we could probably do cleaner
     // by referencing the header element in main.jsx and pass it down the children for exemple
     // or have the header broadcast some event to tell its height or put it in a store like redux
@@ -94,19 +96,12 @@ class LeftNav extends React.Component {
         top: top,
       });
     }
-  }
+  };
 
   render() {
     const links = this._generateArticleLinks(this.props.section.articles);
     return <nav id="left-nav" style={this.state}>{links}</nav>;
   }
 }
-
-LeftNav.propTypes = {
-  // Section data
-  section: React.PropTypes.shape({
-    articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-  }).isRequired,
-};
 
 export default LeftNav;

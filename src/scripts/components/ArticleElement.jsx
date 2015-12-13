@@ -7,6 +7,14 @@ import Paragraph from 'Paragraph.jsx';
  * Represents an element in an article that can be any of [Paragraph, Figure, Article]
  */
 class ArticleElement extends React.Component {
+  static propTypes = {
+    index: React.PropTypes.string.isRequired,
+    level: React.PropTypes.number.isRequired,
+    element: React.PropTypes.shape({
+      type: React.PropTypes.oneOf(['paragraph', 'figure', 'article']).isRequired,
+    }).isRequired,
+  };
+
   render() {
     switch (this.props.element.type) {
       case 'paragraph':
@@ -20,13 +28,5 @@ class ArticleElement extends React.Component {
     }
   }
 }
-
-ArticleElement.propTypes = {
-  index: React.PropTypes.string.isRequired,
-  level: React.PropTypes.number.isRequired,
-  element: React.PropTypes.shape({
-    type: React.PropTypes.oneOf(['paragraph', 'figure', 'article']).isRequired,
-  }).isRequired,
-};
 
 export default ArticleElement;

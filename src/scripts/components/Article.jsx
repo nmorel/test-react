@@ -6,6 +6,21 @@ import articleIdGenerator from '../services/article-id-generator';
  * Represents an article with elements of various types.
  */
 class Article extends React.Component {
+
+  static propTypes = {
+    // Unique id for the article
+    index: React.PropTypes.string.isRequired,
+
+    // Level in the hierarchy. 1 means the article is at the root of the section
+    level: React.PropTypes.number.isRequired,
+
+    // The article containing a title and a list of element
+    article: React.PropTypes.shape({
+      title: React.PropTypes.string.isRequired,
+      elements: React.PropTypes.arrayOf(React.PropTypes.object),
+    }).isRequired,
+  };
+
   render() {
     const level = this.props.level;
 
@@ -24,19 +39,5 @@ class Article extends React.Component {
     );
   }
 }
-
-Article.propTypes = {
-  // Unique id for the article
-  index: React.PropTypes.string.isRequired,
-
-  // Level in the hierarchy. 1 means the article is at the root of the section
-  level: React.PropTypes.number.isRequired,
-
-  // The article containing a title and a list of element
-  article: React.PropTypes.shape({
-    title: React.PropTypes.string.isRequired,
-    elements: React.PropTypes.arrayOf(React.PropTypes.object),
-  }).isRequired,
-};
 
 export default Article;

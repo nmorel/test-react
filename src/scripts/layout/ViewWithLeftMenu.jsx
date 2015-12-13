@@ -6,6 +6,14 @@ import Section from '../components/Section.jsx';
  * Represents a view with a left menu and a section
  */
 class ViewWithLeftMenu extends React.Component {
+  static propTypes = {
+    // Data
+    data: React.PropTypes.shape({
+      title: React.PropTypes.string.isRequired,
+      articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    }).isRequired,
+  };
+
   render() {
     return (
       <div className={'main'} role="main">
@@ -15,13 +23,5 @@ class ViewWithLeftMenu extends React.Component {
     );
   }
 }
-
-ViewWithLeftMenu.propTypes = {
-  // Data
-  data: React.PropTypes.shape({
-    title: React.PropTypes.string.isRequired,
-    articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-  }).isRequired,
-};
 
 export default ViewWithLeftMenu;

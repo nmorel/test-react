@@ -18,6 +18,7 @@ module.exports = {
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'react'],
+          plugins: ['transform-class-properties'],
         },
       },
       {

@@ -7,19 +7,16 @@ import NavToggle from '../components/NavToggle.jsx';
  * Represents the application"s header
  */
 class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      navOpened: false,
-    };
-    this._toggleNav = this._toggleNav.bind(this);
-  }
 
-  _toggleNav() {
+  state = {
+    navOpened: false,
+  };
+
+  _toggleNav = () => {
     this.setState({
       navOpened: !this.state.navOpened,
     });
-  }
+  };
 
   render() {
     const navBarClasses = this.state.navOpened ? 'opened' : '';
