@@ -5,13 +5,12 @@ const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin'
 module.exports = config => {
   const publicPath = config && config.publicPath ? config.publicPath : '/';
   const filename = 'scripts/[name].[chunkhash].js';
-  const cssFilename = 'styles/styles.[contenthash].css';
+  const cssFilename = 'styles/[name].[contenthash].css';
   const imageFilename = 'images/[name].[hash].[ext]';
 
   return {
     entry: {
-      web: './src/scripts/index.jsx',
-      static: './src/scripts/index_static.jsx',
+      app: './src/scripts/index.js',
     },
     devtool: 'source-map',
     module: {
@@ -46,7 +45,7 @@ module.exports = config => {
     },
     plugins: [
       new ExtractTextPlugin(cssFilename),
-      new StaticSiteGeneratorPlugin('static', ['/', '/page1', '/page2', '/contact']),
+      new StaticSiteGeneratorPlugin('app', ['/', '/page1', '/page2', '/contact']),
     ],
     resolve: {
       modulesDirectories: ['.', './node_modules'],

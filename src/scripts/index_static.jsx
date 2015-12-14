@@ -50,7 +50,7 @@ class Page extends React.Component {
 module.exports = function render(locals, callback) {
   const props = {
     scripts: [
-      locals.assets.web,
+      locals.assets.app,
     ],
     stylesheets: [],
     baseHref: locals.webpackStats.compilation.outputOptions.publicPath,
