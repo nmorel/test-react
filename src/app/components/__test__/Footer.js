@@ -1,9 +1,9 @@
-jest.dontMock('../src/scripts/layout/Footer.jsx');
+jest.dontMock('../Footer.jsx');
 
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-const Footer = require('../src/scripts/layout/Footer.jsx').default;
+const Footer = require('../Footer.jsx').default;
 
 describe('Footer', () => {
   it('should show the text and links', () => {

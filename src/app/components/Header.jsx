@@ -1,5 +1,5 @@
 import React from 'react';
-import NavToggle from '../components/NavToggle.jsx';
+import NavToggle from './NavToggle.jsx';
 import { Link } from 'react-router';
 
 /**

@@ -13,7 +13,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
  */
 injectTapEventPlugin();
 
-import routes from './routes.jsx';
+import routes from './app';
 
 const history = useBasename(createHistory)();
 ReactDOM.render(<Router history={history} routes={routes}/>, document.getElementById('app'));

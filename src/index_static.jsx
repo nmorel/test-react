@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import { createMemoryHistory } from 'history';
 import { RoutingContext, match } from 'react-router';
 
-import routes from './routes.jsx';
+import routes from './app';
 
 /**
  * Represents the application's complete page used for static generation
@@ -28,7 +28,7 @@ class Page extends React.Component {
 
         <title>Test d'intégration</title>
 
-        <link rel="shortcut icon" href={require('../images/favicon.ico')}/>
+        <link rel="shortcut icon" href={require('./images/favicon.ico')}/>
 
         <meta name="keywords" content="1000volts, lorem, ipsum"/>
         <meta name="description" content="Lorem ipsum dolor sit amet"/>

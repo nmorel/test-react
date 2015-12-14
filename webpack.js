@@ -10,7 +10,7 @@ module.exports = config => {
 
   return {
     entry: {
-      app: './src/scripts/index.js',
+      app: './src/index.js',
     },
     devtool: 'source-map',
     module: {
