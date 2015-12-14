@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import { createMemoryHistory, useBasename } from 'history';
+import { createMemoryHistory } from 'history';
 import { RoutingContext, match } from 'react-router';
 
 import routes from './routes.jsx';
@@ -61,12 +61,10 @@ module.exports = function render(locals, callback) {
     }
   });
 
-  const history = useBasename(createMemoryHistory)({
-    basename: props.baseHref,
-  });
+  const history = createMemoryHistory();
   const location = history.createLocation(locals.path);
 
-  match({ routes, location }, (error, redirectLocation, renderProps) => {
+  match({ routes, location, basename: props.baseHref }, (error, redirectLocation, renderProps) => {
     // Application element that will be overriden on client
     props.appHtml = ReactDOMServer.renderToString(<RoutingContext {...renderProps} />);
 
