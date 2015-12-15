@@ -1,9 +1,7 @@
-require('../../styles/main.scss');
-
 import React from 'react';
-
-import Header from 'Header.jsx';
-import Footer from 'Footer.jsx';
+import styles from './App.scss';
+import Header from '../Header';
+import Footer from '../Footer';
 
 /**
  * Represents the application's layout
@@ -17,7 +15,9 @@ class App extends React.Component {
     return (
       <div>
         <Header/>
-        {this.props.children}
+        <div className={styles.container} role="main">
+          {this.props.children}
+        </div>
         <Footer/>
       </div>
     );

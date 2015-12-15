@@ -1,5 +1,6 @@
 import React from 'react';
-import articleIdGenerator from '../services/article-id-generator';
+import articleIdGenerator from '../../services/article-id-generator';
+import styles from './LeftNav.scss';
 
 /**
  * Represents a menu on left side to navigate between articles in a section.
@@ -98,7 +99,7 @@ class LeftNav extends React.Component {
 
   render() {
     const links = this._generateArticleLinks(this.props.section.articles);
-    return <nav id="left-nav" style={this.state}>{links}</nav>;
+    return <nav className={styles.leftNav} style={this.state}>{links}</nav>;
   }
 }
 

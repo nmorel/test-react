@@ -1,6 +1,7 @@
 import React from 'react';
 import Article from 'Article.jsx';
-import articleIdGenerator from '../services/article-id-generator';
+import articleIdGenerator from '../../services/article-id-generator';
+import styles from './Section.scss';
 
 /**
  * Represents a section composed of a title and a list of articles.
@@ -20,8 +21,8 @@ class Section extends React.Component {
       return <Article key={key} index={key} level={1} article={article}/>;
     });
     return (
-      <section>
-        <h1>{this.props.section.title}</h1>
+      <section className={styles.section}>
+        <h1 className={styles.title}>{this.props.section.title}</h1>
         {articles}
       </section>
     );

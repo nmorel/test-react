@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './Paragraph.scss';
 /**
  * Reprensents a paragraph in an article
  */
@@ -11,7 +11,7 @@ class Paragraph extends React.Component {
   };
 
   render() {
-    return <p dangerouslySetInnerHTML={{ __html: this.props.paragraph.text }}/>;
+    return <p className={styles.paragraph} dangerouslySetInnerHTML={{ __html: this.props.paragraph.text }}/>;
   }
 }
 

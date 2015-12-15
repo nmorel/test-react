@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './NavToggle.scss';
 
 /**
  * Represents a button used to toggle navigation
@@ -10,10 +11,10 @@ class NavToggle extends React.Component {
 
   render() {
     return (
-      <button id="header-nav-toggle" type="button" onClick={this.props.onToggleNav}>
-        <span className={'icon-bar'}/>
-        <span className={'icon-bar'}/>
-        <span className={'icon-bar'}/>
+      <button id="header-nav-toggle" className={styles.navToggle} type="button" onClick={this.props.onToggleNav}>
+        <span className={styles.iconBar}/>
+        <span className={styles.iconBar}/>
+        <span className={styles.iconBar}/>
       </button>
     );
   }

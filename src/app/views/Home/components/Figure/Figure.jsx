@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Figure.scss';
 
 /**
  * Represents a figure in an article
@@ -14,7 +15,7 @@ class Figure extends React.Component {
 
   render() {
     return (
-      <div className={'figure-overlay'}>
+      <div className={styles.figureOverlay}>
         <figure>
           <img src={this.props.figure.url} alt={this.props.figure.filename}/>
           <figcaption>{this.props.figure.caption}</figcaption>

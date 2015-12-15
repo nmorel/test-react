@@ -1,4 +1,5 @@
-import App from './components/App.jsx';
+import '../styles/main.scss';
+import App from './components/App';
 import Home from './views/Home';
 import Page1 from './views/Page1';
 import Page2 from './views/Page2';

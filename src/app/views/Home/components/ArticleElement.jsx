@@ -1,7 +1,7 @@
 import React from 'react';
-import Article from 'Article.jsx';
-import Figure from 'Figure.jsx';
-import Paragraph from 'Paragraph.jsx';
+import Article from './Article.jsx';
+import Figure from './Figure';
+import Paragraph from './Paragraph';
 
 /**
  * Represents an element in an article that can be any of [Paragraph, Figure, Article]

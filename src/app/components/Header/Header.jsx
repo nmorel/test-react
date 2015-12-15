@@ -1,6 +1,7 @@
 import React from 'react';
-import NavToggle from './NavToggle.jsx';
 import { Link } from 'react-router';
+import NavToggle from '../NavToggle';
+import styles from './Header.scss';
 
 /**
  * Represents the application"s header
@@ -18,13 +19,13 @@ class Header extends React.Component {
   };
 
   render() {
-    const navBarClasses = this.state.navOpened ? 'opened' : '';
+    const navBarClasses = this.state.navOpened ? styles.nav + ' ' + styles.opened : styles.nav;
 
     return (
-      <header id="header">
+      <header id="header" className={styles.header}>
         <NavToggle onToggleNav={this._toggleNav}/>
         <nav id="header-nav" className={navBarClasses}>
-          <ul>
+          <ul className={styles.navLinks}>
             <li>
               <Link to="/" activeClassName="active">Accueil</Link>
             </li>
@@ -39,7 +40,7 @@ class Header extends React.Component {
             </li>
           </ul>
         </nav>
-        <h2>Ma page d'accueil</h2>
+        <h2 className={styles.title}>Ma page d'accueil</h2>
       </header>
     );
   }

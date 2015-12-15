@@ -1,9 +1,4 @@
-@import 'variables';
-@import 'figure';
-@import 'header';
-@import 'left-menu';
-@import 'content';
-@import 'footer';
+@import './variables';
 
 body {
   padding: 0;
@@ -12,11 +7,13 @@ body {
   line-height: 150%;
 }
 
-a {
-  text-decoration: none;
+:global {
+  a {
+    text-decoration: none;
 
-  &:hover, &.active {
-    text-decoration: underline;
+    &:hover, &.active {
+      text-decoration: underline;
+    }
   }
 }
 

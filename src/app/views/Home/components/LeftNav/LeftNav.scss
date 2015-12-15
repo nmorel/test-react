@@ -1,6 +1,6 @@
-@import 'variables';
+@import '../../../../../styles/variables';
 
-#left-nav {
+.leftNav {
   position: absolute;
   top: 0;
   width: $left-menu-width;
@@ -9,7 +9,7 @@
   padding: 15px 0;
 
   @media screen and (max-width: $xs-width) {
-    position: inherit;
+    position: inherit !important;
     float: none;
     width: 100%;
     max-width: none;

@@ -1,6 +1,6 @@
 import React from 'react';
-import LeftNav from '../components/LeftNav.jsx';
-import Section from '../components/Section.jsx';
+import LeftNav from '../components/LeftNav';
+import Section from '../components/Section';
 
 /**
  * Represents a view with a left menu and a section
@@ -16,7 +16,7 @@ class ViewWithLeftMenu extends React.Component {
 
   render() {
     return (
-      <div className={'main'} role="main">
+      <div>
         <LeftNav section={this.props.data}/>
         <Section section={this.props.data}/>
       </div>

@@ -33,7 +33,7 @@ module.exports = config => {
         {
           test: /\.scss$/,
           exclude: [/node_modules/],
-          loader: ExtractTextPlugin.extract('css!autoprefixer?browsers=last 2 versions!sass'),
+          loader: ExtractTextPlugin.extract('css?modules!autoprefixer?browsers=last 2 versions!sass'),
         },
       ],
     },
